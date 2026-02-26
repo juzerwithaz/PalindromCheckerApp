@@ -56,6 +56,35 @@ Use Case 3: Reverse String Based Palindrome check
             System.out.println("UC3 Result: " + input + " is not a Palindrome");
         }
 
+/*
+========================================================
+MAIN CLASS - UseCase3PalindromeCheckerApp
+========================================================
+
+Use Case 3: Reverse String Based Palindrome check
+ */
+
+        char[] chars = input.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+        boolean isPalindromeArray = true;
+        while (start < end){
+            if (chars[start] != chars[end]){
+                isPalindromeArray = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+        if(isPalindromeArray){
+            System.out.println("UC4 Result: " + input + " is a Palindrome");
+        }
+        else{
+            System.out.println("UC4 Result: " + input +" is not a Palindrome");
+        }
+
+
+
 
 
     }
