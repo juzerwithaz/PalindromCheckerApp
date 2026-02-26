@@ -32,9 +32,35 @@ Use Case 2: Hardcoded Palindrom Validation
         }
         if (isPalindrome) {
             System.out.println(input + " is a Palindrome");
-        }else{
+        } else {
             System.out.println(input + "is not  a Palindrome");
         }
 
+
+
+/*
+========================================================
+MAIN CLASS - UseCase3PalindromeCheckerApp
+========================================================
+
+Use Case 3: Reverse String Based Palindrome check
+ */
+        String reversed = "";
+        for (int i = input.length() - 1; i >= 0; i--){
+            reversed = reversed + input.charAt(i);
+        }
+        if (input.equals(reversed)) {
+            System.out.println("UC3 Result: " + input + " is a Palindrome");
+        }
+        else{
+            System.out.println("UC3 Result: " + input + " is not a Palindrome");
+        }
+
+
+
     }
+
+
+
+
 }
