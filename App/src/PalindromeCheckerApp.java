@@ -58,10 +58,11 @@ Use Case 3: Reverse String Based Palindrome check
 
 /*
 ========================================================
-MAIN CLASS - UseCase3PalindromeCheckerApp
+MAIN CLASS - UseCase4PalindromeCheckerApp
 ========================================================
 
-Use Case 3: Reverse String Based Palindrome check
+Use Case 4: Character Array Based Palindrome Check
+
  */
 
         char[] chars = input.toCharArray();
