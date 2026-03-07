@@ -46,13 +46,12 @@ MAIN CLASS - UseCase3PalindromeCheckerApp
 Use Case 3: Reverse String Based Palindrome check
  */
         String reversed = "";
-        for (int i = input.length() - 1; i >= 0; i--){
+        for (int i = input.length() - 1; i >= 0; i--) {
             reversed = reversed + input.charAt(i);
         }
         if (input.equals(reversed)) {
             System.out.println("UC3 Result: " + input + " is a Palindrome");
-        }
-        else{
+        } else {
             System.out.println("UC3 Result: " + input + " is not a Palindrome");
         }
 
@@ -69,28 +68,51 @@ Use Case 4: Character Array Based Palindrome Check
         int start = 0;
         int end = chars.length - 1;
         boolean isPalindromeArray = true;
-        while (start < end){
-            if (chars[start] != chars[end]){
+        while (start < end) {
+            if (chars[start] != chars[end]) {
                 isPalindromeArray = false;
                 break;
             }
             start++;
             end--;
         }
-        if(isPalindromeArray){
+        if (isPalindromeArray) {
             System.out.println("UC4 Result: " + input + " is a Palindrome");
+        } else {
+            System.out.println("UC4 Result: " + input + " is not a Palindrome");
         }
-        else{
-            System.out.println("UC4 Result: " + input +" is not a Palindrome");
+
+
+
+
+    /*
+========================================================
+MAIN CLASS - UseCase5PalindromeCheckerApp
+========================================================
+
+Use Case 5: Stack Based Palindrome Check
+ */
+        java.util.Stack<Character> stack = new java.util.Stack<>();
+
+        // Push characters into stack
+        for (char c : input.toCharArray()) {
+            stack.push(c);
         }
 
+        boolean isPalindromeStack = true;
 
+        // Pop and compare
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
+                isPalindromeStack = false;
+                break;
+            }
+        }
 
-
-
+        if (isPalindromeStack) {
+            System.out.println("UC5 Result: " + input + " is a Palindrome");
+        } else {
+            System.out.println("UC5 Result: " + input + " is not a Palindrome");
+        }
     }
-
-
-
-
 }
