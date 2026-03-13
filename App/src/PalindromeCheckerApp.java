@@ -148,5 +148,39 @@ Use Case 6: Queue + Stack Based Palindrome Check
         } else {
             System.out.println("UC6 Result: " + input + " is not a Palindrome");
         }
+        /*
+========================================================
+MAIN CLASS - UseCase7PalindromeCheckerApp
+========================================================
+
+Use Case 7: Deque Based Optimized Palindrome Check
+ */
+
+        java.util.Deque<Character> deque = new java.util.ArrayDeque<>();
+
+// Add characters to deque
+        for (char c : input.toCharArray()) {
+            deque.add(c);
+        }
+
+        boolean isPalindromeDeque = true;
+
+// Compare front and rear elements
+        while (deque.size() > 1) {
+
+            char first = deque.removeFirst();
+            char last = deque.removeLast();
+
+            if (first != last) {
+                isPalindromeDeque = false;
+                break;
+            }
+        }
+
+        if (isPalindromeDeque) {
+            System.out.println("UC7 Result: " + input + " is a Palindrome");
+        } else {
+            System.out.println("UC7 Result: " + input + " is not a Palindrome");
+        }
     }
 }
