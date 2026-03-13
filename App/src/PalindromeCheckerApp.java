@@ -114,5 +114,39 @@ Use Case 5: Stack Based Palindrome Check
         } else {
             System.out.println("UC5 Result: " + input + " is not a Palindrome");
         }
+
+
+        /*
+========================================================
+MAIN CLASS - UseCase6PalindromeCheckerApp
+========================================================
+
+Use Case 6: Queue + Stack Based Palindrome Check
+ */
+
+        java.util.Queue<Character> queue = new java.util.LinkedList<>();
+        java.util.Stack<Character> stack2 = new java.util.Stack<>();
+
+// Insert characters into queue and stack
+        for (char c : input.toCharArray()) {
+            queue.add(c);
+            stack2.push(c);
+        }
+
+        boolean isPalindromeQS = true;
+
+// Compare queue and stack outputs
+        while (!queue.isEmpty()) {
+            if (queue.remove() != stack2.pop()) {
+                isPalindromeQS = false;
+                break;
+            }
+        }
+
+        if (isPalindromeQS) {
+            System.out.println("UC6 Result: " + input + " is a Palindrome");
+        } else {
+            System.out.println("UC6 Result: " + input + " is not a Palindrome");
+        }
     }
 }
