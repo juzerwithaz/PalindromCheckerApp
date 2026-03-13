@@ -182,5 +182,40 @@ Use Case 7: Deque Based Optimized Palindrome Check
         } else {
             System.out.println("UC7 Result: " + input + " is not a Palindrome");
         }
+
+        /*
+========================================================
+MAIN CLASS - UseCase8PalindromeCheckerApp
+========================================================
+
+Use Case 8: Linked List Based Palindrome Check
+ */
+
+        java.util.LinkedList<Character> list = new java.util.LinkedList<>();
+
+// Add characters into linked list
+        for (char c : input.toCharArray()) {
+            list.add(c);
+        }
+
+        boolean isPalindromeLL = true;
+
+// Compare first and last elements
+        while (list.size() > 1) {
+
+            char first = list.removeFirst();
+            char last = list.removeLast();
+
+            if (first != last) {
+                isPalindromeLL = false;
+                break;
+            }
+        }
+
+        if (isPalindromeLL) {
+            System.out.println("UC8 Result: " + input + " is a Palindrome");
+        } else {
+            System.out.println("UC8 Result: " + input + " is not a Palindrome");
+        }
     }
 }
